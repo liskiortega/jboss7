@@ -1,0 +1,14 @@
+Configuration SO
+
+SO Ubuntu 14.04.5 LTS / SO Ubuntu 16.04.2 LTS
+
+Check hosts (ajust if necessary)
+#cat /etc/hosts
+#vi /etc/hosts
+
+Check hostname (ajust if necessary)
+#cat /etc/hostname 
+#vi /etc/hostname
+
+Set hostname 
+# hostname newname

@@ -1,0 +1,29 @@
+----------------------------------
+Update Java Version Ubuntu (16)
+---------------------------------
+Path: /opt
+File: jdk1.7.0_72.tar
+
+- Locate the file path
+cd /opt/
+- Unpack file
+tar xvf jdk1.7.0_72.tar
+
+- Commands update java, javac (compilador) and javaws:
+update-alternatives --install "/usr/bin/java" "java" "/opt/jdk1.7.0_72/bin/java" 1
+update-alternatives --install "/usr/bin/javac" "javac" "/opt/jdk1.7.0_72/bin/javac" 1
+update-alternatives --install "/usr/bin/javaws" "javaws" "/opt/jdk1.7.0_72/bin/javaws" 1
+
+- Output:
+update-alternatives: using /opt/jdk1.7.0_72/bin/java to provide /usr/bin/java (java) in auto mode
+update-alternatives: using /opt/jdk1.7.0_72/bin/javac to provide /usr/bin/javac (javac) in auto mode
+update-alternatives: using /opt/jdk1.7.0_72/bin/javaws to provide /usr/bin/javaws (javaws) in auto mode
+
+
+- Check version 
+java -version
+java version "1.7.0_72"
+Java(TM) SE Runtime Environment (build 1.7.0_72-b14)
+Java HotSpot(TM) 64-Bit Server VM (build 24.72-b04, mixed mode)
+
+
