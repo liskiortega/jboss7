@@ -1,0 +1,34 @@
+---------------------------------------
+Start/stop JBOSS7 Service
+---------------------------------------
+The systemd service definition
+Command: systemctl start jboss7.service
+Path: /etc/systemd/system
+File: jboss7.service
+Content File:
+
+[Unit]
+Description=Jboss Application Server
+After=network.target
+
+[Service]
+Type=idle
+Environment=JAVA_HOME=/opt/jdk1.7.0_72 JBOSS_HOME=/opt/jboss JAVA=/opt/jdk1.7.0_72/bin/java JBOSS_LOG_DIR=/var/log/jboss "JAVA_OPTS=-Xms1024m -Xmx1024m -XX:MaxPermSize=768m"
+User=jboss
+Group=jboss
+ExecStart=/opt/jboss/bin/standalone.sh -c 'standalone-full.xml' -b '0.0.0.0' -bmanagement=0.0.0.0 
+ExecStop=/opt/jboss/bin/jboss-cli.sh --connect 'command=:shutdown'
+TimeoutStartSec=600
+TimeoutStopSec=600
+
+[Install]
+WantedBy=multi-user.target
+
+----------------------
+Simply place this into /etc/systemd/system/jboss7.service and edit the Environment line to suit your installation paths / desired Java options. Then run systemctl daemon-reload to make systemd recognize the new file. You can now start/stop JBoss using systemctl {stop|start} jboss7.service. To activate automatic startup on boot run systemctl enable jboss7.service.
+
+
+
+
+
+

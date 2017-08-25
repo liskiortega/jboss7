@@ -1,0 +1,2 @@
+TimeZone Ubuntu16 / Ubuntu 14
+ln -sf /usr/share/zoneinfo/America/Caracas /etc/localtime
