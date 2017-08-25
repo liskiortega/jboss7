@@ -1,0 +1,28 @@
+Start /Stop JBoss7 Ubuntu 14
+--------------------------------
+
+Jboss 7 service
+- File Jboss7 in Path: /etc/init.d/ 
+
+--------------------------------
+Script Start Service
+--------------------------------
+/etc/init.d/jboss7 start
+
+--------------------------------
+Script Stop Service
+--------------------------------
+
+/etc/init.d/jboss7 stop
+
+-----------------
+Command Start JBoss 
+-----------------
+
+/opt/jboss/bin/standalone.sh -c standalone-full.xml -b 0.0.0.0 -bmanagement=0.0.0.0
+
+------------------
+Command Stop Jboss 
+------------------
+
+/opt/jboss/bin/jboss-cli.sh --connect command=:shutdown
